@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
+pragma solidity ^0.8.20;
 
 
 /**
@@ -32,26 +32,20 @@ contract StokkaEngine {
 
     // External functions
     /** 
-    @param collateralAddress: The ERC20 token address of the collateral you're depositing
+    @param tokenCollateralAddress: The ERC20 token address of the collateral you're depositing
     @param amountCollateral: The amount of collateral you're depositing
-    @param synthAddress: The ERC20 token address of the synth you want to mint
+    @param synthTokenAddress: The ERC20 token address of the synth you want to mint
     @param synthToCollateralRatio: The ratio of synth token to be minted relative to the collateral --> Determines the amount of the synth asset you want to mint
     @notice This function will deposit your collateral and mint the synth asset in one transaction
      */
     function depositCollateralAndMintSynth(
-        address collateralAddress,
+        address tokenCollateralAddress,
         uint256 amountCollateral,
-        address synthAddress,
+        address synthTokenAddress
         uint256 synthToCollateralRatio
     ) external {
         // function code here
     }
-
-    /**
-    @param  
-    */
-    function depositCollateral(address collateralAddress, uint256 amountCollateral, uint256 position_id)
-
 
     /** 
      * @param tokenCollateralAddress: The ERC20 token address of the collateral you're redeeming
@@ -83,6 +77,58 @@ contract StokkaEngine {
 
 
 /*
+Contract elements should be laid out in the following order:
+Pragma statements
+Import statements
+Events
+Errors
+Interfaces
+Libraries
+Contracts
+
+Inside each contract, library or interface, use the following order:
+Type declarations
+State variables
+Events
+Errors
+Modifiers
+Functions --> Apply CEI (Checks, effects, interactions)
+
+The modifier order for a function should be:
+Visibility
+Mutability
+Virtual
+Override
+Custom modifiers
+
+_singleLeadingUnderscore
+This convention is suggested for non-external functions and 
+state variables (private or internal). State variables without 
+a specified visibility are internal by default.
+*/
+
+// Layout of Contract:
+// version
+// imports
+// errors
+// interfaces, libraries, contracts
+// Type declarations
+// State variables
+// Events
+// Modifiers
+// Functions
+
+// Layout of Functions:
+// constructor
+// receive function (if exists)
+// fallback function (if exists)
+// external
+// public
+// internal
+// private
+// internal & private view & pure functions
+// external & public view & pure functions
+
 
 
 
