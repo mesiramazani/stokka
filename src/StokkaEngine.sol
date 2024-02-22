@@ -1,6 +1,4 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.19;
-
 
 /**
 @title: StokkaEngine
@@ -12,6 +10,8 @@ Hence we have a builtin liquidation mechanism.
 
 @notice: This contract handles all the logic for minting and burning the synthethic asset, as well as the depositing and withdrawing of collateral.
 */
+
+pragma solidity ^0.8.19;
 
 contract StokkaEngine {
     // Functions
@@ -60,7 +60,7 @@ contract StokkaEngine {
     @notice: This function can be called by anyone if the minimum collateralization ratio of the position is broken.
     It will pay back and burn some of the debt to get a portion of the collateral with a discount.
     */
-    function auction(uint256 position_id) external {}
+    function liquidate(uint256 position_id) external {}
 
 
     // External functions that are view
