@@ -14,6 +14,7 @@ The following project is designed to showcase an MVP of a system that allows for
 ```
 git clone https://github.com/mesiramazani/stokka.git
 cd stokka
+forge install OpenZeppelin/openzeppelin-contracts --no-commit
 forge build
 ```
 # Usage
