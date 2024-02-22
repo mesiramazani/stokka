@@ -13,9 +13,14 @@ Hence we have a builtin liquidation mechanism.
 
 pragma solidity ^0.8.19;
 
+import {SyntheticAAPL} from "./SyntheticAAPL.sol";
+
 contract StokkaEngine {
+
+    SyntheticAAPL public syntheticAAPL;
+
     constructor() {
-        // constructor code
+        syntheticAAPL = new SyntheticAAPL();
     }
 
     // External functions

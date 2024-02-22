@@ -15,20 +15,18 @@ pragma solidity ^0.8.19;
 
 import {ERC20Burnable, ERC20} from "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
+import {StokkaEngine} from "./StokkaEngine.sol";
 
 
 contract SyntheticAAPL is ERC20Burnable, Ownable {
-    constructor() ERC20("SyntheticApple", "sAAPL") {}
 
-    /**
-    @param onlyOwner: Only the StokkaEngine contract can call this function.
-    @notice This function will burn _amount of sAAPL tokens.
-    */
+    constructor() ERC20("SyntheticApple", "sAAPL") Ownable(_msgSender()) {}
+
+    /// @notice onlyOwner Only the StokkaEngine contract can call this function.
+    /// @notice This function will burn _amount of sAAPL tokens.
     function burn(uint256 _amount) public override onlyOwner {}
 
-    /**
-    @return bool: Returns a boolean which shows if the minting has been successful.
-    @notice This function will mint _amount of tokens to the caller address.
-    */
+    /// @return bool Returns a boolean which shows if the minting has been successful.
+    /// @notice This function will mint _amount of tokens to the caller address.
     function mint(address _to, uint256 _amount) external onlyOwner returns (bool) {}
 }
